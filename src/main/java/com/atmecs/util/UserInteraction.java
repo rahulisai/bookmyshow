@@ -22,7 +22,7 @@ public class UserInteraction {
 			System.out.println("Insufficient Balance...\n\n");
 			
 		} else {
-			double ConvenienceCharges=20;
+			int ConvenienceCharges=20;
 			FinalBilling bill = new FinalBilling();
 		/*	charge = bill.getTotalCharge(user, amount);
 			System.out.println("Your total ticket charge: " + charge);*/

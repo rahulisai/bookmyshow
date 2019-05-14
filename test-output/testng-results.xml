@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testng-results skipped="0" failed="0" ignored="0" total="3" passed="3">
+  <reporter-output>
+  </reporter-output>
+  <suite name="Default suite" duration-ms="60" started-at="2019-05-14T09:50:13Z" finished-at="2019-05-14T09:50:14Z">
+    <groups>
+    </groups>
+    <test name="Default test" duration-ms="60" started-at="2019-05-14T09:50:13Z" finished-at="2019-05-14T09:50:14Z">
+      <class name="com.atmecs.bookmyshow.AppTest">
+        <test-method status="PASS" signature="testFinalBilling()[pri:0, instance:com.atmecs.bookmyshow.AppTest@4b9e13df]" name="testFinalBilling" duration-ms="12" started-at="2019-05-14T09:50:14Z" finished-at="2019-05-14T09:50:14Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testFinalBilling -->
+        <test-method status="PASS" signature="testRevenue()[pri:0, instance:com.atmecs.bookmyshow.AppTest@4b9e13df]" name="testRevenue" duration-ms="2" started-at="2019-05-14T09:50:14Z" finished-at="2019-05-14T09:50:14Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testRevenue -->
+        <test-method status="PASS" signature="testSeatSelection()[pri:0, instance:com.atmecs.bookmyshow.AppTest@4b9e13df]" name="testSeatSelection" duration-ms="2" started-at="2019-05-14T09:50:14Z" finished-at="2019-05-14T09:50:14Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testSeatSelection -->
+      </class> <!-- com.atmecs.bookmyshow.AppTest -->
+    </test> <!-- Default test -->
+  </suite> <!-- Default suite -->
+</testng-results>

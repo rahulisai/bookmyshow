@@ -2,9 +2,9 @@ package com.atmecs.bookmyshow;
 
 public class SeatSelection {
 
-	double amount=0;
+	int amount=0;
 	 
-		public double getSeatChoice(User user) {
+		public int getSeatChoice(User user) {
 		switch(user.getChoice()) {
 			case "Gold":
 				amount=200;

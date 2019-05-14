@@ -1,38 +1,37 @@
 package com.atmecs.bookmyshow;
 
-import junit.framework.Test;
-import junit.framework.TestCase;
-import junit.framework.TestSuite;
+import static org.testng.Assert.assertEquals;
 
-/**
- * Unit test for simple App.
- */
-public class AppTest 
-    extends TestCase
-{
-    /**
-     * Create the test case
-     *
-     * @param testName name of the test case
-     */
-    public AppTest( String testName )
-    {
-        super( testName );
-    }
+import org.testng.annotations.Test;
 
-    /**
-     * @return the suite of tests being tested
-     */
-    public static Test suite()
-    {
-        return new TestSuite( AppTest.class );
-    }
-
-    /**
-     * Rigourous Test :-)
-     */
-    public void testApp()
-    {
-        assertTrue( true );
-    }
+public class AppTest{
+	@Test
+	public void testFinalBilling() {
+		User user=new User();
+		user.setBalance(15000);
+		user.setSeatcount(4);
+		int amount=200;
+		FinalBilling bill=new FinalBilling();
+		double TotalCharge=bill.getTotalCharge(user, amount);
+		assertEquals(TotalCharge, 820.0);
+	}
+	
+	@Test
+	public void testRevenue() {
+		int Amount=20,Total=0;
+		for(int i=0;i<4;i++) {
+			Total=Revenue.getProfit(Amount);
+		}
+		assertEquals(Total, 80);
+	}
+	
+	@Test
+	public void testSeatSelection() {
+		User user=new User();
+		user.setChoice("Gold");
+		SeatSelection seat=new SeatSelection();
+		int amount=seat.getSeatChoice(user);
+		assertEquals(amount, 200);
+	}
 }
+

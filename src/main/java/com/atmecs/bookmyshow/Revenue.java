@@ -1,8 +1,8 @@
 package com.atmecs.bookmyshow;
 
 public class Revenue {
-	static double revenue=0;
-	public static double getProfit(double amount) {
+	static int revenue=0;
+	public static int getProfit(int amount) {
 	  revenue=revenue+amount;
 	  return revenue;
 	}
