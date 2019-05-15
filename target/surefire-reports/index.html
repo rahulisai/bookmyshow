@@ -24,7 +24,7 @@
     <div class="top-banner-root">
       <span class="top-banner-title-font">Test results</span>
       <br/>
-      <span class="top-banner-font-1">1 suite, 1 failed test</span>
+      <span class="top-banner-font-1">1 suite</span>
     </div> <!-- top-banner-root -->
     <div class="navigator-root">
       <div class="navigator-suite-header">
@@ -38,7 +38,7 @@
         <div class="rounded-window">
           <div class="suite-header light-rounded-window-top">
             <a href="#" class="navigator-link" panel-name="suite-com.atmecs.bookmyshow.AppTest">
-              <span class="suite-name border-failed">com.atmecs.bookmyshow.AppTest</span>
+              <span class="suite-name border-passed">com.atmecs.bookmyshow.AppTest</span>
             </a> <!-- navigator-link -->
           </div> <!-- suite-header light-rounded-window-top -->
           <div class="navigator-suite-content">
@@ -91,21 +91,7 @@
               <div class="suite-section-content">
                 <ul>
                   <li>
-                    <span class="method-stats">3 methods, 1 failed,   2 passed</span>
-                  </li>
-                  <li>
-                    <span class="method-list-title failed">Failed methods</span>
-                    <span class="show-or-hide-methods failed">
-                      <a href="#" panel-name="suite-com.atmecs.bookmyshow.AppTest" class="hide-methods failed suite-com.atmecs.bookmyshow.AppTest"> (hide)</a> <!-- hide-methods failed suite-com.atmecs.bookmyshow.AppTest -->
-                      <a href="#" panel-name="suite-com.atmecs.bookmyshow.AppTest" class="show-methods failed suite-com.atmecs.bookmyshow.AppTest"> (show)</a> <!-- show-methods failed suite-com.atmecs.bookmyshow.AppTest -->
-                    </span>
-                    <div class="method-list-content failed suite-com.atmecs.bookmyshow.AppTest">
-                      <span>
-                        <img width="3%" src="failed.png"/>
-                        <a href="#" class="method navigator-link" panel-name="suite-com.atmecs.bookmyshow.AppTest" title="com.atmecs.bookmyshow.AppTest" hash-for-method="testFinalBilling">testFinalBilling</a> <!-- method navigator-link -->
-                      </span>
-                      <br/>
-                    </div> <!-- method-list-content failed suite-com.atmecs.bookmyshow.AppTest -->
+                    <span class="method-stats">4 methods,   4 passed</span>
                   </li>
                   <li>
                     <span class="method-list-title passed">Passed methods</span>
@@ -116,7 +102,17 @@
                     <div class="method-list-content passed suite-com.atmecs.bookmyshow.AppTest">
                       <span>
                         <img width="3%" src="passed.png"/>
+                        <a href="#" class="method navigator-link" panel-name="suite-com.atmecs.bookmyshow.AppTest" title="com.atmecs.bookmyshow.AppTest" hash-for-method="testFinalBilling">testFinalBilling</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img width="3%" src="passed.png"/>
                         <a href="#" class="method navigator-link" panel-name="suite-com.atmecs.bookmyshow.AppTest" title="com.atmecs.bookmyshow.AppTest" hash-for-method="testRevenue">testRevenue</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img width="3%" src="passed.png"/>
+                        <a href="#" class="method navigator-link" panel-name="suite-com.atmecs.bookmyshow.AppTest" title="com.atmecs.bookmyshow.AppTest" hash-for-method="testSeatAvailability">testSeatAvailability</a> <!-- method navigator-link -->
                       </span>
                       <br/>
                       <span>
@@ -136,27 +132,6 @@
     <div class="wrapper">
       <div class="main-panel-root">
         <div panel-name="suite-com.atmecs.bookmyshow.AppTest" class="panel com.atmecs.bookmyshow.AppTest">
-          <div class="suite-com.atmecs.bookmyshow.AppTest-class-failed">
-            <div class="main-panel-header rounded-window-top">
-              <img src="failed.png"/>
-              <span class="class-name">com.atmecs.bookmyshow.AppTest</span>
-            </div> <!-- main-panel-header rounded-window-top -->
-            <div class="main-panel-content rounded-window-bottom">
-              <div class="method">
-                <div class="method-content">
-                  <a name="testFinalBilling">
-                  </a> <!-- testFinalBilling -->
-                  <span class="method-name">testFinalBilling</span>
-                  <div class="stack-trace">java.lang.NullPointerException
-	at com.atmecs.bookmyshow.SeatSelection.seatAvailability(SeatSelection.java:31)
-	at com.atmecs.bookmyshow.FinalBilling.getTotalCharge(FinalBilling.java:11)
-	at com.atmecs.bookmyshow.AppTest.testFinalBilling(AppTest.java:15)
-... Removed 34 stack frames
-</div> <!-- stack-trace -->
-                </div> <!-- method-content -->
-              </div> <!-- method -->
-            </div> <!-- main-panel-content rounded-window-bottom -->
-          </div> <!-- suite-com.atmecs.bookmyshow.AppTest-class-failed -->
           <div class="suite-com.atmecs.bookmyshow.AppTest-class-passed">
             <div class="main-panel-header rounded-window-top">
               <img src="passed.png"/>
@@ -165,9 +140,23 @@
             <div class="main-panel-content rounded-window-bottom">
               <div class="method">
                 <div class="method-content">
+                  <a name="testFinalBilling">
+                  </a> <!-- testFinalBilling -->
+                  <span class="method-name">testFinalBilling</span>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+              <div class="method">
+                <div class="method-content">
                   <a name="testRevenue">
                   </a> <!-- testRevenue -->
                   <span class="method-name">testRevenue</span>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+              <div class="method">
+                <div class="method-content">
+                  <a name="testSeatAvailability">
+                  </a> <!-- testSeatAvailability -->
+                  <span class="method-name">testSeatAvailability</span>
                 </div> <!-- method-content -->
               </div> <!-- method -->
               <div class="method">
@@ -230,24 +219,28 @@ data.addColumn('number', 'Number');
 data.addColumn('string', 'Method');
 data.addColumn('string', 'Class');
 data.addColumn('number', 'Time (ms)');
-data.addRows(3);
+data.addRows(4);
 data.setCell(0, 0, 0)
 data.setCell(0, 1, 'testFinalBilling')
 data.setCell(0, 2, 'com.atmecs.bookmyshow.AppTest')
 data.setCell(0, 3, 11);
 data.setCell(1, 0, 1)
-data.setCell(1, 1, 'testRevenue')
+data.setCell(1, 1, 'testSeatAvailability')
 data.setCell(1, 2, 'com.atmecs.bookmyshow.AppTest')
 data.setCell(1, 3, 4);
 data.setCell(2, 0, 2)
-data.setCell(2, 1, 'testSeatSelection')
+data.setCell(2, 1, 'testRevenue')
 data.setCell(2, 2, 'com.atmecs.bookmyshow.AppTest')
-data.setCell(2, 3, 0);
+data.setCell(2, 3, 1);
+data.setCell(3, 0, 3)
+data.setCell(3, 1, 'testSeatSelection')
+data.setCell(3, 2, 'com.atmecs.bookmyshow.AppTest')
+data.setCell(3, 3, 0);
 window.suiteTableData['com.atmecs.bookmyshow.AppTest']= { tableData: data, tableDiv: 'times-div-com.atmecs.bookmyshow.AppTest'}
 return data;
 }
               </script>
-              <span class="suite-total-time">Total running time: 15 ms</span>
+              <span class="suite-total-time">Total running time: 16 ms</span>
               <div id="times-div-com.atmecs.bookmyshow.AppTest">
               </div> <!-- times-div-com.atmecs.bookmyshow.AppTest -->
             </div> <!-- times-div -->
@@ -275,18 +268,20 @@ return data;
             <div class="chronological-class">
               <div class="chronological-class-name">com.atmecs.bookmyshow.AppTest</div> <!-- chronological-class-name -->
               <div class="test-method">
-                <img src="failed.png">
-                </img>
                 <span class="method-name">testFinalBilling</span>
                 <span class="method-start">0 ms</span>
               </div> <!-- test-method -->
               <div class="test-method">
                 <span class="method-name">testRevenue</span>
-                <span class="method-start">15 ms</span>
+                <span class="method-start">12 ms</span>
+              </div> <!-- test-method -->
+              <div class="test-method">
+                <span class="method-name">testSeatAvailability</span>
+                <span class="method-start">13 ms</span>
               </div> <!-- test-method -->
               <div class="test-method">
                 <span class="method-name">testSeatSelection</span>
-                <span class="method-start">20 ms</span>
+                <span class="method-start">18 ms</span>
               </div> <!-- test-method -->
           </div> <!-- main-panel-content rounded-window-bottom -->
         </div> <!-- panel -->

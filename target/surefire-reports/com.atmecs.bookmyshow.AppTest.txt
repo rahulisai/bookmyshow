@@ -1,10 +1,4 @@
 -------------------------------------------------------------------------------
 Test set: com.atmecs.bookmyshow.AppTest
 -------------------------------------------------------------------------------
-Tests run: 3, Failures: 1, Errors: 0, Skipped: 0, Time elapsed: 0.461 sec <<< FAILURE!
-testFinalBilling(com.atmecs.bookmyshow.AppTest)  Time elapsed: 0.014 sec  <<< FAILURE!
-java.lang.NullPointerException
-	at com.atmecs.bookmyshow.SeatSelection.seatAvailability(SeatSelection.java:31)
-	at com.atmecs.bookmyshow.FinalBilling.getTotalCharge(FinalBilling.java:11)
-	at com.atmecs.bookmyshow.AppTest.testFinalBilling(AppTest.java:15)
-
+Tests run: 4, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.464 sec

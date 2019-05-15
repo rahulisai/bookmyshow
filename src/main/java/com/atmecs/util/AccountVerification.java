@@ -29,13 +29,18 @@ public class AccountVerification {
 		case 0:
 			System.out.println("You exceed the seat limit...\n\n");
 			break;
+			
+		case 1:
+			return true;
 
 		case 2:
 			System.out.println("Invalid seat choice...\n\n");
 			break;
 
-		case 1:
-			return true;
+		case 3:
+			System.out.println(user.getChoice()+" is HouseFull.");
+			System.out.println("Please choose another seat option\n\n");
+		
 		}
 		return false;
 	}

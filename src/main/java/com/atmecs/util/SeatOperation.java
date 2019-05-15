@@ -33,21 +33,26 @@ public class SeatOperation {
 			int flag=1;
 				switch(user.getChoice()) {
 				case "Gold":
-				//	int goldSeatAvailable=100;
-					if(user.getSeatcount()>ReadExcel1.goldSeatAvailable) {
+					if(ReadExcel1.goldSeatAvailable==0) {
+						flag=3;
+					}else if(user.getSeatcount()>ReadExcel1.goldSeatAvailable) {
 						flag=0;
 					}
 					break;
-				case "Silver":
-				//	int silverSeatAvailable=150;
-					if(user.getSeatcount()>ReadExcel1.silverSeatAvailable) {
-						flag=0;
-					}
-					break;
-				case "Platinum":
 					
-				//	int platinumSeatAvailable=200;
-					if(user.getSeatcount()>ReadExcel1.platinumSeatAvailable) {
+				case "Silver":
+					if(ReadExcel1.silverSeatAvailable==0) {
+						flag=3;
+					}else if(user.getSeatcount()>ReadExcel1.silverSeatAvailable) {
+						flag=0;
+					}
+					break;
+					
+				case "Platinum":
+					if(ReadExcel1.platinumSeatAvailable==0) {
+						flag=3;
+					}
+					else if(user.getSeatcount()>ReadExcel1.platinumSeatAvailable) {
 						flag=0;
 					}
 					break;
@@ -76,6 +81,27 @@ public class SeatOperation {
 				break;
 			}
 			
+		}
+		
+		public static void displaySeatStatus() {
+			if(ReadExcel1.goldSeatAvailable==0) {
+				System.out.println("------------------------------------------------------");
+				System.out.println("1.Gold : HouseFull  2.Silver : "+ReadExcel1.silverSeatAvailable+ " 3.Platinum : "+ReadExcel1.platinumSeatAvailable);
+				System.out.println("------------------------------------------------------");
+			}else if(ReadExcel1.silverSeatAvailable==0) {
+				System.out.println("------------------------------------------------------");
+				System.out.println("1.Gold :" +ReadExcel1.goldSeatAvailable+" 2.Silver : HouseFull 3.Platinum : "+ReadExcel1.platinumSeatAvailable);
+				System.out.println("------------------------------------------------------");
+			}else if(ReadExcel1.platinumSeatAvailable==0 ) {
+				System.out.println("------------------------------------------------------");
+				System.out.println("1.Gold :" +ReadExcel1.goldSeatAvailable+" 2.Silver : "+ReadExcel1.silverSeatAvailable+ " 3.Platinum : HouseFull");
+				System.out.println("------------------------------------------------------");
+			}else {
+				System.out.println("------------------------------------------------------");
+				System.out.println("1.Gold :" +ReadExcel1.goldSeatAvailable+" 2.Silver : "+ReadExcel1.silverSeatAvailable+ " 3.Platinum : "+ReadExcel1.platinumSeatAvailable);
+				System.out.println("------------------------------------------------------");
+				
+			}
 		}
 		
 }

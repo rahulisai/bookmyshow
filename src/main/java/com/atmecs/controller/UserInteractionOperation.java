@@ -13,9 +13,8 @@ public class UserInteractionOperation {
 		System.out.println("Enter your name: ");
 		System.out.println(user.getName() + " " + user.getLname());
 		System.out.println("Number of seats available: ");
-		System.out.println("------------------------------------------------------");
-		System.out.println("1.Gold :" +ReadExcel1.goldSeatAvailable+" 2.Silver : "+ReadExcel1.silverSeatAvailable+ " 3.Platinum : "+ReadExcel1.platinumSeatAvailable);
-		System.out.println("------------------------------------------------------");
+		SeatOperation.displaySeatStatus();
+		
 		System.out.println("Enter your choice: 1.Gold 2.Silver 3.Platinum");
 		System.out.println(user.getChoice());
 		System.out.println("Enter number of seats: ");
