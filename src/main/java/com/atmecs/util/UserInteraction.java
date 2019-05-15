@@ -7,8 +7,8 @@ import com.atmecs.bookmyshow.User;
 import com.atmecs.bookmyshow.UserRegistration;
 
 public class UserInteraction {
-	double charge=0;
-	
+	double charge = 0;
+
 	public void getUserInfo(User user) {
 		System.out.println("Enter your name: ");
 		System.out.println(user.getName() + " " + user.getLname());
@@ -18,37 +18,39 @@ public class UserInteraction {
 		System.out.println(user.getSeatcount());
 		SeatSelection seat = new SeatSelection();
 		double amount = seat.getSeatChoice(user);
-		if (user.getBalance() < amount) {
-			System.out.println("Insufficient Balance...\n\n");
-			
+		if (amount == 0) {
+			System.out.println("Please try again later...\n\n");
 		} else {
-			int ConvenienceCharges=20;
 			FinalBilling bill = new FinalBilling();
-		/*	charge = bill.getTotalCharge(user, amount);
-			System.out.println("Your total ticket charge: " + charge);*/
 			user.setTicketcharge(bill.getTotalCharge(user, amount));
-			Revenue.getProfit(ConvenienceCharges);
-			UserRegistration reg=new UserRegistration();
-			if(reg.paymentMode(user)==1) {
-			System.out.println("Do you want to print bill: 1.Yes 2. No");
-			System.out.println(user.getBillprint());
-			 if(user.getBillprint().equals("Yes")) {
-			 printBill(user);
-			 }else {
-				 System.out.println("\n\n");
-			 }
+			if (user.getBalance() < amount) {
+				System.out.println("Insufficient Balance...\n\n");
+
+			} else {
+				int ConvenienceCharges = 20;
+				Revenue.getProfit(ConvenienceCharges);
+				UserRegistration reg = new UserRegistration();
+				if (reg.paymentMode(user) == 1) {
+					System.out.println("Do you want to print ticket: 1.Yes 2. No");
+					System.out.println(user.getBillprint());
+					if (user.getBillprint().equals("Yes")) {
+						printBill(user);
+					}
+				}
+				System.out.println("\n\n");
 			}
 		}
 	}
 
 	public void printBill(User user) {
-	  System.out.println("******INOX MULTIPLEX********");
-	  System.out.println("Name : "+user.getName()+" "+user.getLname());
-	  System.out.println("SeatChoice: "+user.getChoice());
-	  System.out.println("Amount: "+user.getTicketcharge());
-	  System.out.println("Number Of Seats: "+user.getSeatcount());
-	  System.out.println("ShowTime: "+"6.00 pm\n\n");
-	  
-	  }
+		System.out.println("* * * * * * * * * INOX MULTIPLEX * * * * * * * *");
+		System.out.println("*  Name : " + user.getName() + " " + user.getLname() + " \t\t\t\t*");
+		System.out.println("*  SeatChoice: " + user.getChoice() + "              \t\t*");
+		System.out.println("*  Amount: " + user.getTicketcharge() + "            \t\t\t*");
+		System.out.println("*  Number Of Seats: " + user.getSeatcount() + "      \t\t\t*");
+		System.out.println("*  ShowTime: " + "6.00 pm                          \t*");
+		System.out.println("* * * * * * * * * * * * * * * * * * *  * * * * *\n\n");
+
+	}
 
 }

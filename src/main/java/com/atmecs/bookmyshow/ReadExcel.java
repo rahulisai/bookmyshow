@@ -46,7 +46,7 @@ public class ReadExcel {
 							if (ColumnNumber == 1) {
 								user.setId((int) cell.getNumericCellValue());
 							} else if (ColumnNumber == 5) {
-								user.setSeatcount(cell.getNumericCellValue());
+								user.setSeatcount((int) cell.getNumericCellValue());
 							}else if (ColumnNumber == 6) {
 								user.setBalance(cell.getNumericCellValue());
 							}else if (ColumnNumber == 11) {

@@ -5,7 +5,7 @@ public class User {
 	private String name;
 	private String lname;
 	private String choice;
-	private double seatcount;
+	private int seatcount;
 	private double balance;
 	private String billprint;
 	private double ticketcharge;
@@ -105,11 +105,12 @@ public class User {
 		this.lname = lname;
 	}
 
-	public double getSeatcount() {
+
+	public int getSeatcount() {
 		return seatcount;
 	}
 
-	public void setSeatcount(double seatcount) {
+	public void setSeatcount(int seatcount) {
 		this.seatcount = seatcount;
 	}
 

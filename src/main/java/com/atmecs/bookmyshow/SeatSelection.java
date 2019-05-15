@@ -19,9 +19,41 @@ public class SeatSelection {
 				break;
 			default:
 				System.out.println("Please enter a valid choice...");
+				amount=0;
 				break;
 			}
 		return amount;
+		}
+		
+
+		public int seatAvailability(User user, double amount) {
+			int flag=1;
+				switch(user.getChoice()) {
+				case "Gold":
+					int goldSeatAvailable=100;
+					if(user.getSeatcount()>goldSeatAvailable) {
+						flag=0;
+					}
+					break;
+				case "Silver":
+					int silverSeatAvailable=150;
+					if(user.getSeatcount()>silverSeatAvailable) {
+						flag=0;
+					}
+					break;
+				case "Platinum":
+					int platinumSeatAvailable=200;
+					if(user.getSeatcount()>platinumSeatAvailable) {
+						flag=0;
+					}
+					break;
+					
+				default:
+					System.out.println("Invalid choice...");
+					flag=2;
+					break;
+				}
+			return flag;
 		}
 		
 }
