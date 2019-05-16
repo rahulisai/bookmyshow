@@ -7,6 +7,7 @@ import java.sql.Statement;
 import java.util.ArrayList;
 import java.util.List;
 
+import com.atmecs.controller.ReadExcel1;
 import com.atmecs.pojo.User;
 import com.mysql.jdbc.PreparedStatement;
 
@@ -87,33 +88,8 @@ public class DbOperation {
 			pstmt.close();
 			con.close();
 		} catch (SQLException e) {
-			System.out.println(e);
+			System.out.println("User Already Available");
+			ReadExcel1.errObj=1;
 		}
-
 	}
-	/*
-	 * //Method to update the details of the employee public void
-	 * updateEmployee(User user) { con = connect.getConnection(); String query =
-	 * "update employee set name=?,age=?,city=? where id=?";
-	 * 
-	 * try { pstmt = (PreparedStatement) con.prepareStatement(query);
-	 * pstmt.setString(1, user.getName()); pstmt.setInt(2, user.getAge());
-	 * pstmt.setString(3, user.getCity()); pstmt.setInt(4, user.getId());
-	 * pstmt.executeUpdate();
-	 * 
-	 * System.out.println("Data updated successfully"); pstmt.close(); con.close();
-	 * } catch (SQLException e) { System.out.println(e); }
-	 * 
-	 * }
-	 * 
-	 * //Method to delete the details of the employee public void
-	 * deleteEmployee(User user) { con = connect.getConnection(); String query =
-	 * "delete from employee where id=?"; try { pstmt = (PreparedStatement)
-	 * con.prepareStatement(query); pstmt.setInt(1, user.getId());
-	 * pstmt.executeUpdate(); System.out.println("Data deleted successfully");
-	 * pstmt.close(); con.close(); } catch (SQLException e) { System.out.println(e);
-	 * }
-	 * 
-	 * }
-	 */
 }

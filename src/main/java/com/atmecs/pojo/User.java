@@ -14,7 +14,6 @@ public class User {
 	private String paymentMode;
 	private int bankAccount;
 
-	
 	public int getBankAccount() {
 		return bankAccount;
 	}
@@ -63,8 +62,6 @@ public class User {
 		this.ticketcharge = ticketcharge;
 	}
 
-	
-
 	public String getBillprint() {
 		return billprint;
 	}
@@ -104,7 +101,6 @@ public class User {
 	public void setLname(String lname) {
 		this.lname = lname;
 	}
-
 
 	public int getSeatcount() {
 		return seatcount;

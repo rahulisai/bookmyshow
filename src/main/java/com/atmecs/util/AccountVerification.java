@@ -18,8 +18,8 @@ public class AccountVerification {
 				flag = 1;
 			} else {
 				System.out.println("Invalid Account Number..");
+				flag = 0;
 			}
-
 		}
 		return flag;
 	}
@@ -29,7 +29,7 @@ public class AccountVerification {
 		case 0:
 			System.out.println("You exceed the seat limit...\n\n");
 			break;
-			
+
 		case 1:
 			return true;
 
@@ -38,9 +38,9 @@ public class AccountVerification {
 			break;
 
 		case 3:
-			System.out.println(user.getChoice()+" is HouseFull.");
+			System.out.println(user.getChoice() + " is HouseFull.");
 			System.out.println("Please choose another seat option\n\n");
-		
+
 		}
 		return false;
 	}

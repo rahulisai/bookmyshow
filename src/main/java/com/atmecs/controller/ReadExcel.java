@@ -2,9 +2,8 @@ package com.atmecs.controller;
 
 import java.io.File;
 import java.io.FileInputStream;
-import java.util.ArrayList;
 import java.util.Iterator;
-import java.util.List;
+
 
 import org.apache.poi.ss.usermodel.Cell;
 import org.apache.poi.ss.usermodel.Row;
@@ -18,11 +17,11 @@ public class ReadExcel {
 
 	public void getExcelData() {
 		try {
-			int rownumberone=0;
-			List<User> list = new ArrayList<User>();
+			int rownumberone = 0;
 			FileInputStream file = new FileInputStream(new File("ExcelDemo.xlsx"));
 
 			// Create Workbook instance holding reference to .xlsx file
+			@SuppressWarnings("resource")
 			XSSFWorkbook workbook = new XSSFWorkbook(file);
 
 			// Get first/desired sheet from the workbook
@@ -48,9 +47,9 @@ public class ReadExcel {
 								user.setId((int) cell.getNumericCellValue());
 							} else if (ColumnNumber == 5) {
 								user.setSeatcount((int) cell.getNumericCellValue());
-							}else if (ColumnNumber == 6) {
+							} else if (ColumnNumber == 6) {
 								user.setBalance(cell.getNumericCellValue());
-							}else if (ColumnNumber == 11) {
+							} else if (ColumnNumber == 11) {
 								user.setBankAccount((int) cell.getNumericCellValue());
 							}
 							break;
@@ -61,13 +60,13 @@ public class ReadExcel {
 								user.setLname(cell.getStringCellValue());
 							} else if (ColumnNumber == 4) {
 								user.setChoice(cell.getStringCellValue());
-							}else if (ColumnNumber == 8) {
+							} else if (ColumnNumber == 8) {
 								user.setLoginChoice(cell.getStringCellValue());
-							}else if (ColumnNumber == 9) {
+							} else if (ColumnNumber == 9) {
 								user.setPassword(cell.getStringCellValue());
-							}else if (ColumnNumber == 7) {
+							} else if (ColumnNumber == 7) {
 								user.setBillprint(cell.getStringCellValue());
-							}else if (ColumnNumber == 10) {
+							} else if (ColumnNumber == 10) {
 								user.setPaymentMode(cell.getStringCellValue());
 							}
 							break;
@@ -80,24 +79,22 @@ public class ReadExcel {
 						break;
 					}
 				}
-				
-				if(rownumberone==0) {
-					rownumberone=rownumberone+1;
+
+				if (rownumberone == 0) {
+					rownumberone = rownumberone + 1;
 					continue;
-				}else {
-					UserRegistration registration=new UserRegistration();
-				if(user.getLoginChoice().equals("SignUp")) {
-					registration.userSignUp(user);
-				}else if(user.getLoginChoice().equals("Login")) {
-					registration.userLogin(user);
+				} else {
+					UserRegistration registration = new UserRegistration();
+					if (user.getLoginChoice().equals("SignUp")) {
+						registration.userSignUp(user);
+					} else if (user.getLoginChoice().equals("Login")) {
+						registration.userLogin(user);
+					}
+					UserInteractionOperation ui = new UserInteractionOperation();
+					ui.getUserInfo(user);
+					rownumberone = rownumberone + 1;
 				}
-				UserInteractionOperation ui=new UserInteractionOperation();
-				ui.getUserInfo(user);
-				rownumberone=rownumberone+1;
-				}
-				
-				
-				
+
 			}
 
 			file.close();
