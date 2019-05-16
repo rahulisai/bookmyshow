@@ -14,7 +14,7 @@ public class AccountVerification {
 			System.out.println(user.getBankAccount());
 			User userdb = db.getSpecificUser(user.getId());
 			if (userdb.getBankAccount() == user.getBankAccount()) {
-				System.out.println("Account Verfied...");
+				System.out.println("Account Verified...");
 				flag = 1;
 			} else {
 				System.out.println("Invalid Account Number..");
@@ -40,6 +40,9 @@ public class AccountVerification {
 		case 3:
 			System.out.println(user.getChoice() + " is HouseFull.");
 			System.out.println("Please choose another seat option\n\n");
+			
+		case 4:
+			System.out.println("Seat cannot be zero");
 
 		}
 		return false;

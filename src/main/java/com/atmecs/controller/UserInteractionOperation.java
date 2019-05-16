@@ -42,7 +42,10 @@ public class UserInteractionOperation {
 					if (user.getBillprint().equals("Yes")) {
 						FinalBilling.printBill(user);
 					}
+					System.out.println("\n\n");
 					return user;
+				}else {
+					System.out.println("Please enter valid payment option");
 				}
 				System.out.println("\n\n");
 			} else {

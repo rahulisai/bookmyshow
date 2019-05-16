@@ -73,7 +73,7 @@ public class DbOperation {
 	}
 
 	// Method to insert the employee in database
-	public void addUser(User user) {
+	public int addUser(User user) {
 		con = connect.getConnection();
 		String query = "insert into user values(?,?,?,?)";
 
@@ -84,12 +84,13 @@ public class DbOperation {
 			pstmt.setString(3, user.getPassword());
 			pstmt.setInt(4, user.getBankAccount());
 			pstmt.executeUpdate();
-			System.out.println("Data inserted successfully");
+			//System.out.println("Data inserted successfully");
 			pstmt.close();
 			con.close();
+			return 0;
 		} catch (SQLException e) {
-			System.out.println("User Already Available");
-			ReadExcel1.errObj=1;
+			System.out.println("User Already Available\n\n");
+			return 1;
 		}
 	}
 }

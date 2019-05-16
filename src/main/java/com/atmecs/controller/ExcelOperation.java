@@ -32,7 +32,11 @@ public class ExcelOperation {
 				user.setId((int) id);
 				break;
 			case 1:
-				user.setName((String) getCellValue(nextCell));
+				if((String) getCellValue(nextCell)==null) {
+					throw new NullPointerException("abc");
+				}else {
+					user.setName((String) getCellValue(nextCell));
+				}
 				break;
 			case 2:
 				user.setLname((String) getCellValue(nextCell));

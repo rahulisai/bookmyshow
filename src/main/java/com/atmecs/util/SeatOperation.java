@@ -36,6 +36,8 @@ public class SeatOperation {
 				flag = 3;
 			} else if (user.getSeatcount() > ReadExcel1.goldSeatsAvailable) {
 				flag = 0;
+			}else if(user.getSeatcount()==0) {
+				flag=4;
 			}
 			break;
 
@@ -44,6 +46,8 @@ public class SeatOperation {
 				flag = 3;
 			} else if (user.getSeatcount() > ReadExcel1.silverSeatsAvailable) {
 				flag = 0;
+			}else if(user.getSeatcount()==0) {
+				flag=4;
 			}
 			break;
 
@@ -52,6 +56,8 @@ public class SeatOperation {
 				flag = 3;
 			} else if (user.getSeatcount() > ReadExcel1.platinumSeatsAvailable) {
 				flag = 0;
+			}else if(user.getSeatcount()==0) {
+				flag=4;
 			}
 			break;
 

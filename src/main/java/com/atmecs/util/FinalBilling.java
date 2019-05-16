@@ -21,7 +21,7 @@ public class FinalBilling {
 		System.out.println("*  Amount: " + user.getTicketcharge() + "            \t\t\t*");
 		System.out.println("*  Number Of Seats: " + user.getSeatcount() + "      \t\t\t*");
 		System.out.println("*  ShowTime: " + "6.00 pm                          \t*");
-		System.out.println("* * * * * * * * * * * * * * * * * * *  * * * * *\n\n");
+		System.out.println("* * * * * * * * * * * * * * * * * * *  * * * * *");
 		System.out.println("------------------------------------------------------------");
 	}
 

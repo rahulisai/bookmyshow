@@ -7,18 +7,17 @@ import com.atmecs.pojo.User;
 public class UserRegistration {
 	DbOperation db = new DbOperation();
 
-	public void userLoginSignUpChoice(User user) {
+	public int userLoginSignUpChoice(User user) {
 		switch (user.getLoginChoice()) {
 		case "SignUp":
-			userSignUp(user);
-			break;
+			return userSignUp(user);
 		case "Login":
-			userLogin(user);
-			break;
+			return userLogin(user);
 		}
+		return 1;
 	}
 
-	public void userSignUp(User user) {
+	public int userSignUp(User user) {
 		System.out.println("BookMyShow");
 		System.out.println("1.Login 2.SignUp");
 		System.out.println(user.getLoginChoice());
@@ -27,11 +26,11 @@ public class UserRegistration {
 		System.out.println("Enter your Name:");
 		System.out.println(user.getName());
 		System.out.println("Enter your Password:");
-		System.out.println(user.getPassword() + "\n\n");
-		db.addUser(user);
+		System.out.println(user.getPassword());
+		return db.addUser(user);
 	}
 
-	public void userLogin(User user) {
+	public int userLogin(User user) {
 		System.out.println("BookMyShow");
 		System.out.println("1.Login 2.SignUp");
 		System.out.println(user.getLoginChoice());
@@ -43,9 +42,11 @@ public class UserRegistration {
 		User userdb = db.getSpecificUser(user.getId());
 		if (userdb.getPassword().equals(user.getPassword()) && (userdb.getId() == user.getId())) {
 			System.out.println(user.getName() + " Successfully logged in...\n\n");
+			return 0;
 		} else {
 			System.out.println("Invalid Id or password...\n\n");
-			ReadExcel1.errObj=1;
+			return 1;
 		}
+		
 	}
 }

@@ -31,7 +31,7 @@ public class ReadExcel1 {
 		Map<Integer, Object[]> empinfo = new TreeMap<Integer, Object[]>();
 		empinfo.put(1, new Object[] { "Name", "Seat Type", "Total Charges", "Number of Seats", "Time" });
 		Iterator<Row> rowIterator = firstSheet.iterator();
-
+		try {
 		while (rowIterator.hasNext()) {
 			Row row = rowIterator.next();
 			Iterator<Cell> cellIterator = row.cellIterator();
@@ -47,11 +47,11 @@ public class ReadExcel1 {
 
 				ExcelOperation excelObject = new ExcelOperation();
 				user = excelObject.excelToObject(user, columnIndex, nextCell);
-			}
+			}//column ending
 
 			UserRegistration registration = new UserRegistration();
-			
-			registration.userLoginSignUpChoice(user);
+			int flag=registration.userLoginSignUpChoice(user);
+			if(flag==0) {
 			UserInteractionOperation ui = new UserInteractionOperation();
 			user = ui.getUserInfo(user);
 			if (user != null) {
@@ -60,8 +60,11 @@ public class ReadExcel1 {
 				counter++;
 			
 			}
+			}
+		}//row ending
+		}catch(Exception e) {
+			System.out.println("Please enter valid data...");
 		}
-
 		empinfo.put(counter, new Object[] { "Revenue:", Revenue.revenue, "", " ", " " });
 		WriteExcel write = new WriteExcel();
 		write.addUserDetails(empinfo, workbook, SecondSheet);
