@@ -13,6 +13,6 @@ public class App {
 		} catch (IOException e) {
 			System.out.println("File Not Found");
 		}
-		System.out.println("Total Revenue: " + Revenue.revenue);
+		System.out.println("Total Revenue: " + Revenue.profit);
 	}
 }

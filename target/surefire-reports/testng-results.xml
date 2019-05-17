@@ -1,28 +1,44 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results skipped="0" failed="0" ignored="0" total="4" passed="4">
+<testng-results skipped="0" failed="0" ignored="0" total="8" passed="8">
   <reporter-output>
   </reporter-output>
-  <suite name="com.atmecs.bookmyshow.AppTest" duration-ms="53" started-at="2019-05-17T07:00:38Z" finished-at="2019-05-17T07:00:38Z">
+  <suite name="com.atmecs.bookmyshow.AppTest" duration-ms="325" started-at="2019-05-17T12:04:24Z" finished-at="2019-05-17T12:04:25Z">
     <groups>
     </groups>
-    <test name="Command line test" duration-ms="53" started-at="2019-05-17T07:00:38Z" finished-at="2019-05-17T07:00:38Z">
+    <test name="Command line test" duration-ms="325" started-at="2019-05-17T12:04:24Z" finished-at="2019-05-17T12:04:25Z">
       <class name="com.atmecs.bookmyshow.AppTest">
-        <test-method status="PASS" signature="testFinalBilling()[pri:0, instance:com.atmecs.bookmyshow.AppTest@880ec60]" name="testFinalBilling" duration-ms="17" started-at="2019-05-17T07:00:38Z" finished-at="2019-05-17T07:00:38Z">
+        <test-method status="PASS" signature="testFinalBilling()[pri:0, instance:com.atmecs.bookmyshow.AppTest@7f63425a]" name="testFinalBilling" duration-ms="12" started-at="2019-05-17T12:04:24Z" finished-at="2019-05-17T12:04:24Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- testFinalBilling -->
-        <test-method status="PASS" signature="testRevenue()[pri:0, instance:com.atmecs.bookmyshow.AppTest@880ec60]" name="testRevenue" duration-ms="2" started-at="2019-05-17T07:00:38Z" finished-at="2019-05-17T07:00:38Z">
+        <test-method status="PASS" signature="testPaymentbMode()[pri:0, instance:com.atmecs.bookmyshow.AppTest@7f63425a]" name="testPaymentbMode" duration-ms="265" started-at="2019-05-17T12:04:24Z" finished-at="2019-05-17T12:04:25Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testPaymentbMode -->
+        <test-method status="PASS" signature="testRevenue()[pri:0, instance:com.atmecs.bookmyshow.AppTest@7f63425a]" name="testRevenue" duration-ms="1" started-at="2019-05-17T12:04:25Z" finished-at="2019-05-17T12:04:25Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- testRevenue -->
-        <test-method status="PASS" signature="testSeatAvailability()[pri:0, instance:com.atmecs.bookmyshow.AppTest@880ec60]" name="testSeatAvailability" duration-ms="2" started-at="2019-05-17T07:00:38Z" finished-at="2019-05-17T07:00:38Z">
+        <test-method status="PASS" signature="testSeatAvailability()[pri:0, instance:com.atmecs.bookmyshow.AppTest@7f63425a]" name="testSeatAvailability" duration-ms="2" started-at="2019-05-17T12:04:25Z" finished-at="2019-05-17T12:04:25Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- testSeatAvailability -->
-        <test-method status="PASS" signature="testSeatSelection()[pri:0, instance:com.atmecs.bookmyshow.AppTest@880ec60]" name="testSeatSelection" duration-ms="1" started-at="2019-05-17T07:00:38Z" finished-at="2019-05-17T07:00:38Z">
+        <test-method status="PASS" signature="testSeatSelection()[pri:0, instance:com.atmecs.bookmyshow.AppTest@7f63425a]" name="testSeatSelection" duration-ms="0" started-at="2019-05-17T12:04:25Z" finished-at="2019-05-17T12:04:25Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- testSeatSelection -->
+        <test-method status="PASS" signature="testSeatStatus()[pri:0, instance:com.atmecs.bookmyshow.AppTest@7f63425a]" name="testSeatStatus" duration-ms="0" started-at="2019-05-17T12:04:25Z" finished-at="2019-05-17T12:04:25Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testSeatStatus -->
+        <test-method status="PASS" signature="testuserLoginSignUpChoice()[pri:0, instance:com.atmecs.bookmyshow.AppTest@7f63425a]" name="testuserLoginSignUpChoice" duration-ms="8" started-at="2019-05-17T12:04:25Z" finished-at="2019-05-17T12:04:25Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testuserLoginSignUpChoice -->
+        <test-method status="PASS" signature="testSeatVerification()[pri:0, instance:com.atmecs.bookmyshow.AppTest@7f63425a]" name="testSeatVerification" duration-ms="0" started-at="2019-05-17T12:04:25Z" finished-at="2019-05-17T12:04:25Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testSeatVerification -->
       </class> <!-- com.atmecs.bookmyshow.AppTest -->
     </test> <!-- Command line test -->
   </suite> <!-- com.atmecs.bookmyshow.AppTest -->

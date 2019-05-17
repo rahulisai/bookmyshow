@@ -24,7 +24,7 @@ public class Verification {
 		return 2;
 	}
 
-	public int SeatVerification(User user, int flag) {
+	public int seatVerification(User user, int flag) {
 		switch (flag) {
 		case 0:
 			System.out.println("You exceed the seat limit...\n\n");
@@ -40,10 +40,13 @@ public class Verification {
 		case 3:
 			System.out.println(user.getChoice() + " is HouseFull.");
 			System.out.println("Please choose another seat option\n\n");
-
+			break;
 		case 4:
 			System.out.println("Seat cannot be zero");
-
+			break;
+		default:
+			System.out.println("Invalid option");
+			break;
 		}
 		return 1;
 	}
@@ -58,6 +61,9 @@ public class Verification {
 			break;
 		case 2:
 			System.out.println("Please enter valid payment option");
+			break;
+		default:
+			System.out.println("Invalid option");
 			break;
 		}
 		return 1;

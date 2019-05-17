@@ -27,7 +27,7 @@ public class ExcelOperation {
 	}
 
 	public User excelToObject(User user, int columnIndex, Cell nextCell) {
-		try {
+
 			switch (columnIndex) {
 			case 0:
 				double id;
@@ -35,12 +35,7 @@ public class ExcelOperation {
 				user.setId((int) id);
 				break;
 			case 1:
-				User userdb = db.getSpecificUser(user.getId());
-				user.setName((String) getCellValue(nextCell));
-				if (userdb.getName().equals(user.getName())) {
-				} else {
-
-				}
+				user.setName((String) getCellValue(nextCell)); 
 				break;
 			case 2:
 				user.setLname((String) getCellValue(nextCell));
@@ -73,11 +68,11 @@ public class ExcelOperation {
 				bankAccount = (double) getCellValue(nextCell);
 				user.setBankAccount((int) bankAccount);
 				break;
+			default:
+				System.out.println("Invalid choice");
+				break;
 			}
 			return user;
-		} catch (ClassCastException e) {
-
-		}
-		return user;
+	
 	}
 }

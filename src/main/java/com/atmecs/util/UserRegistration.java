@@ -12,6 +12,9 @@ public class UserRegistration {
 			return userSignUp(user);
 		case "Login":
 			return userLogin(user);
+		default:
+			System.out.println("Invalid Choice");
+			break;
 		}
 		return 1;
 	}

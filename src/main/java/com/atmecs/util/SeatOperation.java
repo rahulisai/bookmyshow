@@ -4,34 +4,30 @@ import com.atmecs.controller.ReadExcel1;
 import com.atmecs.pojo.User;
 
 public class SeatOperation {
-
-	int amount = 0;
+	public static final String GOLD = "Gold";
+	public static final String SILVER = "Silver";
+	public static final String PLATINUM = "Platinum";
+	static final String LINE = "------------------------------------------------------";
 
 	public int getSeatChoice(User user) {
 		switch (user.getChoice()) {
-		case "Gold":
-			amount = 200;
-			break;
-		case "Silver":
-			amount = 150;
-			break;
-		case "Platinum":
-			amount = 300;
-			break;
-		case "Choice":
-			break;
+		case GOLD:
+			return 200;
+		case SILVER:
+			return 150;
+		case PLATINUM:
+			return 300;
 		default:
 			System.out.println("Please enter a valid choice...");
-			amount = 0;
 			break;
 		}
-		return amount;
+		return 0;
 	}
 
 	public int seatAvailability(User user) {
 		int flag = 1;
 		switch (user.getChoice()) {
-		case "Gold":
+		case GOLD:
 			if (ReadExcel1.goldSeatsAvailable == 0) {
 				flag = 3;
 			} else if (user.getSeatcount() > ReadExcel1.goldSeatsAvailable) {
@@ -41,7 +37,7 @@ public class SeatOperation {
 			}
 			break;
 
-		case "Silver":
+		case SILVER:
 			if (ReadExcel1.silverSeatsAvailable == 0) {
 				flag = 3;
 			} else if (user.getSeatcount() > ReadExcel1.silverSeatsAvailable) {
@@ -51,7 +47,7 @@ public class SeatOperation {
 			}
 			break;
 
-		case "Platinum":
+		case PLATINUM:
 			if (ReadExcel1.platinumSeatsAvailable == 0) {
 				flag = 3;
 			} else if (user.getSeatcount() > ReadExcel1.platinumSeatsAvailable) {
@@ -68,19 +64,19 @@ public class SeatOperation {
 		return flag;
 	}
 
-	public void seatStatus(User user) {
+	public static void seatStatus(User user) {
 		switch (user.getChoice()) {
-		case "Gold":
+		case GOLD:
 			ReadExcel1.goldSeatsAvailable = ReadExcel1.goldSeatsAvailable - user.getSeatcount();
 			break;
-		case "Silver":
-			// int silverSeatAvailable=150;
+		case SILVER:
 			ReadExcel1.silverSeatsAvailable = ReadExcel1.silverSeatsAvailable - user.getSeatcount();
 			break;
-		case "Platinum":
-
-			// int platinumSeatAvailable=200;
+		case PLATINUM:
 			ReadExcel1.platinumSeatsAvailable = ReadExcel1.platinumSeatsAvailable - user.getSeatcount();
+			break;
+		default:
+			System.out.println("Invalid Choice");
 			break;
 		}
 
@@ -91,43 +87,46 @@ public class SeatOperation {
 		if (ReadExcel1.goldSeatsAvailable == 0 && ReadExcel1.silverSeatsAvailable == 0
 				&& ReadExcel1.platinumSeatsAvailable == 0) {
 
-			System.out.println("1.Gold : HouseFull 2.Silver : HouseFull 3.Platinum : HouseFull");
+			System.out.println("1. GOLD : HouseFull 2.SILVER : HouseFull 3.PLATINUM : HouseFull");
 
 		} else if (ReadExcel1.goldSeatsAvailable == 0 && ReadExcel1.silverSeatsAvailable == 0) {
 
 			System.out.println(
-					"1.Gold : HouseFull 2.Silver : HouseFull 3.Platinum : " + ReadExcel1.platinumSeatsAvailable);
+					"1.GOLD : HouseFull 2.SILVER : HouseFull 3.PLATINUM : " + ReadExcel1.platinumSeatsAvailable);
 
 		} else if (ReadExcel1.goldSeatsAvailable == 0 && ReadExcel1.platinumSeatsAvailable == 0) {
 
 			System.out.println(
-					"1.Gold : HouseFull 2.Silver : " + ReadExcel1.silverSeatsAvailable + " 3.Platinum : HouseFull");
+					"1. GOLD: HouseFull 2.SILVER : " + ReadExcel1.silverSeatsAvailable + " 3.PLATINUM : HouseFull");
 
 		} else if (ReadExcel1.silverSeatsAvailable == 0 && ReadExcel1.platinumSeatsAvailable == 0) {
 
 			System.out.println(
-					"1.Gold :" + ReadExcel1.goldSeatsAvailable + "2.Silver : HouseFull 3.Platinum : HouseFull");
+					"1.GOLD: " + ReadExcel1.goldSeatsAvailable + "2.SILVER : HouseFull 3.PLATINUM : HouseFull");
 
 		} else if (ReadExcel1.goldSeatsAvailable == 0) {
-			System.out.println("------------------------------------------------------");
-			System.out.println("1.Gold : HouseFull  2.Silver : " + ReadExcel1.silverSeatsAvailable + " 3.Platinum : "
+			System.out.println(LINE);
+			System.out.println("1. GOLD : HouseFull  2.SILVER : " + ReadExcel1.silverSeatsAvailable + " 3.PLATINUM : "
 					+ ReadExcel1.platinumSeatsAvailable);
-			System.out.println("------------------------------------------------------");
+			System.out.println(LINE);
+
 		} else if (ReadExcel1.silverSeatsAvailable == 0) {
-			System.out.println("------------------------------------------------------");
-			System.out.println("1.Gold :" + ReadExcel1.goldSeatsAvailable + " 2.Silver : HouseFull 3.Platinum : "
+			System.out.println(LINE);
+			System.out.println("1. GOLD :" + ReadExcel1.goldSeatsAvailable + " 2.SILVER : HouseFull 3.PLATINUM : "
 					+ ReadExcel1.platinumSeatsAvailable);
-			System.out.println("------------------------------------------------------");
+
+			System.out.println(LINE);
 		} else if (ReadExcel1.platinumSeatsAvailable == 0) {
-			System.out.println("------------------------------------------------------");
-			System.out.println("1.Gold :" + ReadExcel1.goldSeatsAvailable + " 2.Silver : "
-					+ ReadExcel1.silverSeatsAvailable + " 3.Platinum : HouseFull");
-			System.out.println("------------------------------------------------------");
+			System.out.println(LINE);
+			System.out.println("1.GOLD :" + ReadExcel1.goldSeatsAvailable + " 2.SILVER : "
+					+ ReadExcel1.silverSeatsAvailable + " 3.PLATINUM : HouseFull");
+			System.out.println(LINE);
+
 		} else {
-			System.out.println("------------------------------------------------------");
-			System.out.println("1.Gold :" + ReadExcel1.goldSeatsAvailable + " 2.Silver : "
-					+ ReadExcel1.silverSeatsAvailable + " 3.Platinum : " + ReadExcel1.platinumSeatsAvailable);
-			System.out.println("------------------------------------------------------");
+			System.out.println(LINE);
+			System.out.println("1.GOLD :" + ReadExcel1.goldSeatsAvailable + " 2.SILVER : "
+					+ ReadExcel1.silverSeatsAvailable + " 3.PLATINUM : " + ReadExcel1.platinumSeatsAvailable);
+			System.out.println(LINE);
 
 		}
 	}

@@ -4,14 +4,14 @@ import com.atmecs.pojo.User;
 
 public class FinalBilling {
 
-	int ConvenienceCharges = 20;
-	double TotalCharge = 0;
+	int convenienceCharges = 20;
+	double totalCharge = 0;
 
 	public double getTotalCharge(User user, double amount) {
 
-		TotalCharge = user.getSeatcount() * amount + ConvenienceCharges;
+		totalCharge = user.getSeatcount() * amount + convenienceCharges;
 
-		return TotalCharge;
+		return totalCharge;
 	}
 
 	public static void printBill(User user) {

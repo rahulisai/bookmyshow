@@ -25,7 +25,7 @@ public class UserInteractionOperation {
 		int flag = seat.seatAvailability(user);
 
 		Verification verify = new Verification();
-		int value = verify.SeatVerification(user, flag);
+		int value = verify.seatVerification(user, flag);
 
 		if (value==0) {
 			FinalBilling bill = new FinalBilling();
@@ -34,12 +34,12 @@ public class UserInteractionOperation {
 
 			if (user.getTicketcharge() <= user.getBalance()) {
 
-				int ConvenienceCharges = 20;
+				int convenienceCharges = 20;
 				Verification account = new Verification();
 				int output = account.verifyWronginput(user);
 				if (output == 0) {
-					Revenue.getProfit(ConvenienceCharges);
-					seat.seatStatus(user);
+					Revenue.getProfit(convenienceCharges);
+					SeatOperation.seatStatus(user);
 					System.out.println("Do you want to print ticket: 1.Yes 2. No");
 					System.out.println(user.getBillprint());
 					if (user.getBillprint().equals("Yes")) {

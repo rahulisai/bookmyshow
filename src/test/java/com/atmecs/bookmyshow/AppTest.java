@@ -58,8 +58,7 @@ public class AppTest {
 		User user = new User();
 		user.setChoice("Gold");
 		user.setSeatcount(2);
-		SeatOperation checkStatus = new SeatOperation();
-		checkStatus.seatStatus(user);
+		SeatOperation.seatStatus(user);
 		assertEquals(ReadExcel1.goldSeatsAvailable, 98);
 	}
 	
@@ -92,6 +91,6 @@ public class AppTest {
 	public void testSeatVerification() {
 		User user = new User();
 		Verification verify=new Verification();
-		assertEquals(verify.SeatVerification(user, 4), 1);
+		assertEquals(verify.seatVerification(user, 4), 1);
 	}
 }

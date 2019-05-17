@@ -4,8 +4,6 @@ import java.sql.Connection;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
-import java.util.ArrayList;
-import java.util.List;
 import com.atmecs.pojo.User;
 import com.mysql.jdbc.PreparedStatement;
 
@@ -14,39 +12,14 @@ import com.mysql.jdbc.PreparedStatement;
  */
 public class DbOperation {
 	DbConnection connect = new DbConnection();
-	List<User> list = new ArrayList<User>();
 	private Connection con = null;
 	private PreparedStatement pstmt = null;
-	private ResultSet rs = null;
 	Statement stmt = null;
 
-	// Method to retrieve all the employees
-	public List<User> getEmployees() {
-		String query = "select * from employee";
-		con = connect.getConnection();
 
-		try {
-			stmt = con.createStatement();
-			rs = stmt.executeQuery(query);
-			while (rs.next()) {
-				User user = new User();
-				user.setId(rs.getInt(1));
-				user.setName(rs.getString(2));
-				user.setPassword(rs.getString(3));
-				user.setBankAccount(rs.getInt(4));
-				list.add(user);
-			}
-
-			rs.close();
-			con.close();
-		} catch (SQLException e) {
-			System.out.println(e);
-		}
-		return list;
-	}
-
-	// Method to get a specific employee as per id
+	// Method to get a specific user as per id
 	public User getSpecificUser(int id) {
+		ResultSet rs = null;
 		String query = "select * from user where id=? ";
 		con = connect.getConnection();
 		User user = new User();
@@ -61,7 +34,6 @@ public class DbOperation {
 				user.setPassword(rs.getString(3));
 				user.setBankAccount(rs.getInt(4));
 				
-
 			}
 			pstmt.close();
 			rs.close();
@@ -72,7 +44,7 @@ public class DbOperation {
 		return user;
 	}
 
-	// Method to insert the employee in database
+	// Method to insert the user in database
 	public int addUser(User user) {
 		con = connect.getConnection();
 		String query = "insert into user values(?,?,?,?)";
@@ -84,7 +56,6 @@ public class DbOperation {
 			pstmt.setString(3, user.getPassword());
 			pstmt.setInt(4, user.getBankAccount());
 			pstmt.executeUpdate();
-			//System.out.println("Data inserted successfully");
 			pstmt.close();
 			con.close();
 			return 0;
