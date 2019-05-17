@@ -6,8 +6,6 @@ import java.sql.SQLException;
 import java.sql.Statement;
 import java.util.ArrayList;
 import java.util.List;
-
-import com.atmecs.controller.ReadExcel1;
 import com.atmecs.pojo.User;
 import com.mysql.jdbc.PreparedStatement;
 
@@ -59,8 +57,10 @@ public class DbOperation {
 			while (rs.next()) {
 
 				user.setId(rs.getInt(1));
+				user.setName(rs.getString(2));
 				user.setPassword(rs.getString(3));
 				user.setBankAccount(rs.getInt(4));
+				
 
 			}
 			pstmt.close();
@@ -89,7 +89,7 @@ public class DbOperation {
 			con.close();
 			return 0;
 		} catch (SQLException e) {
-			System.out.println("User Already Available\n\n");
+			System.out.println("User account already exist\n\n");
 			return 1;
 		}
 	}

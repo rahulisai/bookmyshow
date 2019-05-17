@@ -2,9 +2,11 @@ package com.atmecs.controller;
 
 import org.apache.poi.ss.usermodel.Cell;
 
+import com.atmecs.db.DbOperation;
 import com.atmecs.pojo.User;
 
 public class ExcelOperation {
+	DbOperation db=new DbOperation();
 	private Object getCellValue(Cell cell) {
 		switch (cell.getCellTypeEnum()) {
 		case STRING:
@@ -32,10 +34,11 @@ public class ExcelOperation {
 				user.setId((int) id);
 				break;
 			case 1:
-				if((String) getCellValue(nextCell)==null) {
-					throw new NullPointerException("abc");
-				}else {
-					user.setName((String) getCellValue(nextCell));
+				User userdb = db.getSpecificUser(user.getId());
+				user.setName((String) getCellValue(nextCell));
+				if (userdb.getName().equals(user.getName())) {
+				} else {
+					
 				}
 				break;
 			case 2:
@@ -70,9 +73,10 @@ public class ExcelOperation {
 				user.setBankAccount((int) bankAccount);
 				break;
 			}
-		return user;
-	}catch(ClassCastException e) {
-	}
+			return user;
+		} catch (ClassCastException e) {
+			
+		}
 		return user;
 	}
 }

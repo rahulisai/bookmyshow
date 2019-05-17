@@ -1,7 +1,7 @@
 package com.atmecs.controller;
 
 import com.atmecs.pojo.User;
-import com.atmecs.util.AccountVerification;
+import com.atmecs.util.Verification;
 import com.atmecs.util.FinalBilling;
 import com.atmecs.util.Revenue;
 import com.atmecs.util.SeatOperation;
@@ -12,6 +12,7 @@ public class UserInteractionOperation {
 	public User getUserInfo(User user) {
 		System.out.println("Enter your name: ");
 		System.out.println(user.getName() + " " + user.getLname());
+		System.out.println("Rates: 1.Gold : Rs.200 2.Silver: Rs. 150 3.Platinum: Rs.300 ");
 		System.out.println("Number of seats available: ");
 		SeatOperation.displaySeatStatus();
 
@@ -23,7 +24,7 @@ public class UserInteractionOperation {
 		SeatOperation seat = new SeatOperation();
 		int flag = seat.seatAvailability(user);
 
-		AccountVerification verify = new AccountVerification();
+		Verification verify = new Verification();
 		boolean value = verify.SeatVerification(user, flag);
 
 		if (value) {
@@ -31,10 +32,12 @@ public class UserInteractionOperation {
 			double amount = seat.getSeatChoice(user);
 			user.setTicketcharge(bill.getTotalCharge(user, amount));
 
-			if (user.getBalance() > amount) {
+			if (user.getTicketcharge() <= user.getBalance()) {
+
 				int ConvenienceCharges = 20;
-				AccountVerification account = new AccountVerification();
-				if (account.paymentMode(user) == 1) {
+				Verification account = new Verification();
+				int output = account.verifyWronginput(user);
+				if (output == 0) {
 					Revenue.getProfit(ConvenienceCharges);
 					seat.seatStatus(user);
 					System.out.println("Do you want to print ticket: 1.Yes 2. No");
@@ -44,8 +47,6 @@ public class UserInteractionOperation {
 					}
 					System.out.println("\n\n");
 					return user;
-				}else {
-					System.out.println("Please enter valid payment option");
 				}
 				System.out.println("\n\n");
 			} else {

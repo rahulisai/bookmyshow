@@ -1,6 +1,5 @@
 package com.atmecs.util;
 
-import com.atmecs.controller.ReadExcel1;
 import com.atmecs.db.DbOperation;
 import com.atmecs.pojo.User;
 
@@ -47,6 +46,6 @@ public class UserRegistration {
 			System.out.println("Invalid Id or password...\n\n");
 			return 1;
 		}
-		
+
 	}
 }
