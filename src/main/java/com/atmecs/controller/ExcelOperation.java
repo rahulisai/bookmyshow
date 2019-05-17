@@ -6,7 +6,8 @@ import com.atmecs.db.DbOperation;
 import com.atmecs.pojo.User;
 
 public class ExcelOperation {
-	DbOperation db=new DbOperation();
+	DbOperation db = new DbOperation();
+
 	private Object getCellValue(Cell cell) {
 		switch (cell.getCellTypeEnum()) {
 		case STRING:
@@ -38,7 +39,7 @@ public class ExcelOperation {
 				user.setName((String) getCellValue(nextCell));
 				if (userdb.getName().equals(user.getName())) {
 				} else {
-					
+
 				}
 				break;
 			case 2:
@@ -75,7 +76,7 @@ public class ExcelOperation {
 			}
 			return user;
 		} catch (ClassCastException e) {
-			
+
 		}
 		return user;
 	}

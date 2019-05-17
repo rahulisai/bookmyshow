@@ -4,10 +4,13 @@ import static org.testng.Assert.assertEquals;
 
 import org.testng.annotations.Test;
 
+import com.atmecs.controller.ReadExcel1;
 import com.atmecs.pojo.User;
 import com.atmecs.util.FinalBilling;
 import com.atmecs.util.Revenue;
 import com.atmecs.util.SeatOperation;
+import com.atmecs.util.UserRegistration;
+import com.atmecs.util.Verification;
 
 public class AppTest {
 	@Test
@@ -49,5 +52,46 @@ public class AppTest {
 		int flag = selectSeat.seatAvailability(user);
 		assertEquals(flag, 1);
 	}
+	
+	@Test
+	public void testSeatStatus() {
+		User user = new User();
+		user.setChoice("Gold");
+		user.setSeatcount(2);
+		SeatOperation checkStatus = new SeatOperation();
+		checkStatus.seatStatus(user);
+		assertEquals(ReadExcel1.goldSeatsAvailable, 98);
+	}
+	
+	@Test
+	public void testuserLoginSignUpChoice() {
+		User user = new User();
+		user.setName("abc");
+		user.setLoginChoice("Login");
+		user.setId(1);
+		user.setPassword("abc123");
+		UserRegistration register=new UserRegistration();
+		int choice=register.userLoginSignUpChoice(user);
+		assertEquals(choice, 0);
+	}
+	
+	@Test
+	public void testPaymentbMode() {
+		User user = new User();
+		user.setId(1);
+		user.setName("Ramesh");
+		user.setBankAccount(1111);
+		user.setPaymentMode("NetBanking");
 
+		Verification verify=new Verification();
+		int number=verify.paymentMode(user);
+		assertEquals(number, 0);
+	}
+	
+	@Test
+	public void testSeatVerification() {
+		User user = new User();
+		Verification verify=new Verification();
+		assertEquals(verify.SeatVerification(user, 4), 1);
+	}
 }

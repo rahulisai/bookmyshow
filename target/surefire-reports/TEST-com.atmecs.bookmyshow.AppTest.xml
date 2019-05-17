@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" ?>
-<testsuite tests="4" failures="0" name="com.atmecs.bookmyshow.AppTest" time="0.016" errors="0" skipped="0">
+<testsuite tests="4" failures="0" name="com.atmecs.bookmyshow.AppTest" time="0.02" errors="0" skipped="0">
   <properties>
     <property name="java.vendor" value="Oracle Corporation"/>
     <property name="JOB_NAME" value="BookMyShow"/>
@@ -29,11 +29,11 @@
     <property name="PROMPT" value="$P$G"/>
     <property name="user.language" value="en"/>
     <property name="JOB_BASE_NAME" value="BookMyShow"/>
-    <property name="RUN_CHANGES_DISPLAY_URL" value="http://localhost:9090/job/BookMyShow/21/display/redirect?page=changes"/>
-    <property name="BUILD_DISPLAY_NAME" value="#21"/>
+    <property name="RUN_CHANGES_DISPLAY_URL" value="http://localhost:9090/job/BookMyShow/22/display/redirect?page=changes"/>
+    <property name="BUILD_DISPLAY_NAME" value="#22"/>
     <property name="OneDrive" value="C:\Users\rahul.isai\OneDrive"/>
     <property name="sun.boot.library.path" value="C:\Program Files\Java\jdk1.8.0_181\jre\bin"/>
-    <property name="GIT_PREVIOUS_SUCCESSFUL_COMMIT" value="bfebb16e76b06c56a89bcdb50091173ad4db5359"/>
+    <property name="GIT_PREVIOUS_SUCCESSFUL_COMMIT" value="f78db9739b80b18b1eae7c2f9ca38315924d9c87"/>
     <property name="LOCALAPPDATA" value="C:\Users\rahul.isai\AppData\Local"/>
     <property name="java.version" value="1.8.0_181"/>
     <property name="PROCESSOR_LEVEL" value="6"/>
@@ -43,7 +43,7 @@
     <property name="NODE_NAME" value="master"/>
     <property name="classpath" value=""/>
     <property name="java.endorsed.dirs" value="C:\Program Files\Java\jdk1.8.0_181\jre\lib\endorsed"/>
-    <property name="BUILD_ID" value="21"/>
+    <property name="BUILD_ID" value="22"/>
     <property name="sun.cpu.isalist" value="amd64"/>
     <property name="sun.jnu.encoding" value="Cp1252"/>
     <property name="file.encoding.pkg" value="sun.io"/>
@@ -59,13 +59,13 @@
     <property name="java.home" value="C:\Program Files\Java\jdk1.8.0_181\jre"/>
     <property name="java.vm.info" value="mixed mode"/>
     <property name="os.version" value="10.0"/>
-    <property name="RUN_DISPLAY_URL" value="http://localhost:9090/job/BookMyShow/21/display/redirect"/>
+    <property name="RUN_DISPLAY_URL" value="http://localhost:9090/job/BookMyShow/22/display/redirect"/>
     <property name="POM_VERSION" value="0.0.1-SNAPSHOT"/>
     <property name="TMP" value="C:\Users\RAHUL~1.ISA\AppData\Local\Temp"/>
     <property name="path.separator" value=";"/>
     <property name="java.vm.version" value="25.181-b13"/>
     <property name="user.variant" value=""/>
-    <property name="GIT_PREVIOUS_COMMIT" value="59ce634639e25de1debce912c4c033ed9143c2ae"/>
+    <property name="GIT_PREVIOUS_COMMIT" value="f78db9739b80b18b1eae7c2f9ca38315924d9c87"/>
     <property name="JOB_DISPLAY_URL" value="http://localhost:9090/job/BookMyShow/display/redirect"/>
     <property name="CommonProgramFiles(x86)" value="C:\Program Files (x86)\Common Files"/>
     <property name="USERDOMAIN_ROAMINGPROFILE" value="ATMECS"/>
@@ -84,7 +84,7 @@
     <property name="VBOX_MSI_INSTALL_PATH" value="C:\Program Files\Oracle\VirtualBox\"/>
     <property name="user.home" value="C:\Users\rahul.isai"/>
     <property name="PUBLIC" value="C:\Users\Public"/>
-    <property name="BUILD_TAG" value="jenkins-BookMyShow-21"/>
+    <property name="BUILD_TAG" value="jenkins-BookMyShow-22"/>
     <property name="JENKINS_SERVER_COOKIE" value="e3c97f4240a1a870"/>
     <property name="HUDSON_URL" value="http://localhost:9090/"/>
     <property name="ProgramData" value="C:\ProgramData"/>
@@ -97,7 +97,7 @@
     <property name="java.runtime.name" value="Java(TM) SE Runtime Environment"/>
     <property name="maven.home" value="C:\Users\rahul.isai\.jenkins\tools\hudson.tasks.Maven_MavenInstallation\TestMaven"/>
     <property name="java.class.path" value="C:\Users\rahul.isai\.jenkins\plugins\maven-plugin\WEB-INF\lib\maven35-agent-1.12.jar;C:\Users\rahul.isai\.jenkins\tools\hudson.tasks.Maven_MavenInstallation\TestMaven\boot\plexus-classworlds-2.5.2.jar;C:\Users\rahul.isai\.jenkins\tools\hudson.tasks.Maven_MavenInstallation\TestMaven/conf/logging"/>
-    <property name="sun.java.command" value="jenkins.maven3.agent.Maven35Main C:\Users\rahul.isai\.jenkins\tools\hudson.tasks.Maven_MavenInstallation\TestMaven C:\Users\rahul.isai\.jenkins\war\WEB-INF\lib\remoting-3.29.jar C:\Users\rahul.isai\.jenkins\plugins\maven-plugin\WEB-INF\lib\maven35-interceptor-1.12.jar C:\Users\rahul.isai\.jenkins\plugins\maven-plugin\WEB-INF\lib\maven3-interceptor-commons-1.12.jar 60886"/>
+    <property name="sun.java.command" value="jenkins.maven3.agent.Maven35Main C:\Users\rahul.isai\.jenkins\tools\hudson.tasks.Maven_MavenInstallation\TestMaven C:\Users\rahul.isai\.jenkins\war\WEB-INF\lib\remoting-3.29.jar C:\Users\rahul.isai\.jenkins\plugins\maven-plugin\WEB-INF\lib\maven35-interceptor-1.12.jar C:\Users\rahul.isai\.jenkins\plugins\maven-plugin\WEB-INF\lib\maven3-interceptor-commons-1.12.jar 62357"/>
     <property name="Path" value="C:\Program Files\Java\jdk1.8.0_181\bin;C:\Program Files\Java\jre1.8.0_181\bin;C:\Program Files (x86)\Common Files\Oracle\Java\javapath;C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\WindowsPowerShell\v1.0\;C:\Windows\System32\OpenSSH\;C:\Program Files\Microsoft VS Code\bin;C:\Program Files\dotnet\;C:\Program Files\Microsoft SQL Server\130\Tools\Binn\;C:\Program Files\MongoDB\Server\4.0\bin;C:\apache-maven-3.5.4-bin\apache-maven-3.5.4\bin;C:\Program Files\Git\cmd;C:\Users\vaibhav.chauhan\AppData\Local\Android\Sdk\tools;C:\Users\vaibhav.chauhan\AppData\Local\Android\Sdk\platform-tools;C:\Users\vaibhav.chauhan\AppData\Local\Android\Sdk\platform-tools;C:\Users\vaibhav.chauhan\AppData\Local\Android\Sdk\tools;C:\Program Files\nodejs\;C:\Program Files (x86)\HPE\Unified Functional Testing\bin;C:\Program Files\Java\jdk1.8.0_181\bin;C:\Program Files\Java\jre1.8.0_181\bin;"/>
     <property name="java.vm.specification.name" value="Java Virtual Machine Specification"/>
     <property name="PROCESSOR_ARCHITECTURE" value="AMD64"/>
@@ -113,7 +113,7 @@
     <property name="HUDSON_HOME" value="C:\Users\rahul.isai\.jenkins"/>
     <property name="PATH+MAVEN" value="C:\Users\rahul.isai\.jenkins\tools\hudson.tasks.Maven_MavenInstallation\TestMaven/bin"/>
     <property name="ProgramFiles(x86)" value="C:\Program Files (x86)"/>
-    <property name="BUILD_URL" value="http://localhost:9090/job/BookMyShow/21/"/>
+    <property name="BUILD_URL" value="http://localhost:9090/job/BookMyShow/22/"/>
     <property name="java.vendor.url.bug" value="http://bugreport.sun.com/bugreport/"/>
     <property name="java.awt.graphicsenv" value="sun.awt.Win32GraphicsEnvironment"/>
     <property name="os.arch" value="amd64"/>
@@ -127,14 +127,14 @@
 "/>
     <property name="MAVEN_HOME" value="C:\Users\rahul.isai\.jenkins\tools\hudson.tasks.Maven_MavenInstallation\TestMaven"/>
     <property name="java.vm.name" value="Java HotSpot(TM) 64-Bit Server VM"/>
-    <property name="BUILD_NUMBER" value="21"/>
+    <property name="BUILD_NUMBER" value="22"/>
     <property name="ANDROID_HOME" value="C:\Users\vaibhav.chauhan\AppData\Local\Android\Sdk"/>
     <property name="JENKINS_URL" value="http://localhost:9090/"/>
     <property name="PROCESSOR_REVISION" value="3c03"/>
     <property name="GIT_BRANCH" value="origin/master"/>
     <property name="ProgramW6432" value="C:\Program Files"/>
     <property name="windir" value="C:\Windows"/>
-    <property name="GIT_COMMIT" value="f78db9739b80b18b1eae7c2f9ca38315924d9c87"/>
+    <property name="GIT_COMMIT" value="ac4499b14a58a28b70bd27ef9a735deceb8931ea"/>
     <property name="=C:" value="C:\Users\rahul.isai\Jenkins"/>
     <property name="file.encoding" value="Cp1252"/>
     <property name="SystemDrive" value="C:"/>
@@ -146,8 +146,8 @@
     <property name="DriverData" value="C:\Windows\System32\Drivers\DriverData"/>
     <property name="GIT_URL" value="https://github.com/rahulisai/bookmyshow.git"/>
   </properties>
-  <testcase classname="com.atmecs.bookmyshow.AppTest" name="testFinalBilling" time="0.013"/>
+  <testcase classname="com.atmecs.bookmyshow.AppTest" name="testFinalBilling" time="0.018"/>
   <testcase classname="com.atmecs.bookmyshow.AppTest" name="testRevenue" time="0"/>
-  <testcase classname="com.atmecs.bookmyshow.AppTest" name="testSeatAvailability" time="0.003"/>
+  <testcase classname="com.atmecs.bookmyshow.AppTest" name="testSeatAvailability" time="0.002"/>
   <testcase classname="com.atmecs.bookmyshow.AppTest" name="testSeatSelection" time="0"/>
 </testsuite>

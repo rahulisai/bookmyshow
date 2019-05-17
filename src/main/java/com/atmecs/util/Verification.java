@@ -24,14 +24,14 @@ public class Verification {
 		return 2;
 	}
 
-	public boolean SeatVerification(User user, int flag) {
+	public int SeatVerification(User user, int flag) {
 		switch (flag) {
 		case 0:
 			System.out.println("You exceed the seat limit...\n\n");
 			break;
 
 		case 1:
-			return true;
+			return 0;
 
 		case 2:
 			System.out.println("Invalid seat choice...\n\n");
@@ -45,7 +45,7 @@ public class Verification {
 			System.out.println("Seat cannot be zero");
 
 		}
-		return false;
+		return 1;
 	}
 
 	public int verifyWronginput(User user) {

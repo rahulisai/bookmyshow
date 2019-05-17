@@ -25,9 +25,9 @@ public class UserInteractionOperation {
 		int flag = seat.seatAvailability(user);
 
 		Verification verify = new Verification();
-		boolean value = verify.SeatVerification(user, flag);
+		int value = verify.SeatVerification(user, flag);
 
-		if (value) {
+		if (value==0) {
 			FinalBilling bill = new FinalBilling();
 			double amount = seat.getSeatChoice(user);
 			user.setTicketcharge(bill.getTotalCharge(user, amount));

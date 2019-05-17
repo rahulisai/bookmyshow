@@ -23,12 +23,14 @@ public class ReadExcel1 {
 
 	public void getExcelData() throws IOException {
 		FileInputStream inputStream = new FileInputStream("ExcelDemo.xlsx");
-		
+
 		XSSFWorkbook workbook = new XSSFWorkbook(inputStream);
 		workbook.removeSheetAt(1);
 		XSSFSheet firstSheet = workbook.getSheetAt(0);
-		XSSFSheet SecondSheeet = workbook.createSheet("Booked User"); 
 		
+		@SuppressWarnings("unused")
+		XSSFSheet SecondSheeet = workbook.createSheet("Booked User");
+
 		XSSFSheet SecondSheet = workbook.getSheetAt(1);
 
 		Map<Integer, Object[]> empinfo = new TreeMap<Integer, Object[]>();
