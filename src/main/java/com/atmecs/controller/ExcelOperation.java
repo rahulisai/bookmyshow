@@ -5,9 +5,13 @@ import org.apache.poi.ss.usermodel.Cell;
 import com.atmecs.db.DbOperation;
 import com.atmecs.pojo.User;
 
+/*
+ * ExcelOperation class will perform operation of saving each cell data into the object. 
+ */
 public class ExcelOperation {
 	DbOperation db = new DbOperation();
 
+	// This method return a value based on its type.
 	private Object getCellValue(Cell cell) {
 		switch (cell.getCellTypeEnum()) {
 		case STRING:
@@ -26,8 +30,13 @@ public class ExcelOperation {
 		return null;
 	}
 
+	/*
+	 * This method will create & return an object by saving each cell data in
+	 * particular getter setter method of pojo class.
+	 */
 	public User excelToObject(User user, int columnIndex, Cell nextCell) {
 
+		try {
 			switch (columnIndex) {
 			case 0:
 				double id;
@@ -35,7 +44,7 @@ public class ExcelOperation {
 				user.setId((int) id);
 				break;
 			case 1:
-				user.setName((String) getCellValue(nextCell)); 
+				user.setName((String) getCellValue(nextCell));
 				break;
 			case 2:
 				user.setLname((String) getCellValue(nextCell));
@@ -72,7 +81,10 @@ public class ExcelOperation {
 				System.out.println("Invalid choice");
 				break;
 			}
-			return user;
-	
+		} catch (ClassCastException e) {
+			System.out.println();
+		}
+		return user;
+
 	}
 }

@@ -17,7 +17,7 @@ public class DbOperation {
 	Statement stmt = null;
 
 
-	// Method to get a specific user as per id
+	// Method to get a specific user as per id.
 	public User getSpecificUser(int id) {
 		ResultSet rs = null;
 		String query = "select * from user where id=? ";
@@ -31,8 +31,10 @@ public class DbOperation {
 
 				user.setId(rs.getInt(1));
 				user.setName(rs.getString(2));
-				user.setPassword(rs.getString(3));
-				user.setBankAccount(rs.getInt(4));
+				user.setLname(rs.getString(3));
+				user.setPassword(rs.getString(4));
+				user.setBankAccount(rs.getInt(5));
+				
 				
 			}
 			pstmt.close();
@@ -47,14 +49,15 @@ public class DbOperation {
 	// Method to insert the user in database
 	public int addUser(User user) {
 		con = connect.getConnection();
-		String query = "insert into user values(?,?,?,?)";
+		String query = "insert into user values(?,?,?,?,?)";
 
 		try {
 			pstmt = (PreparedStatement) con.prepareStatement(query);
 			pstmt.setDouble(1, user.getId());
 			pstmt.setString(2, user.getName());
-			pstmt.setString(3, user.getPassword());
-			pstmt.setInt(4, user.getBankAccount());
+			pstmt.setString(3, user.getLname());
+			pstmt.setString(4, user.getPassword());
+			pstmt.setInt(5, user.getBankAccount());
 			pstmt.executeUpdate();
 			pstmt.close();
 			con.close();

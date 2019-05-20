@@ -3,9 +3,12 @@ package com.atmecs.util;
 import com.atmecs.db.DbOperation;
 import com.atmecs.pojo.User;
 
+//This class verify the operation display the message accordingly.
 public class Verification {
 	DbOperation db = new DbOperation();
 
+	// PaymentMode will be verify and if its proper then verify the bank account
+	// number with database.
 	public int paymentMode(User user) {
 		if (user.getPaymentMode().equalsIgnoreCase("NetBanking")
 				|| user.getPaymentMode().equalsIgnoreCase("CreditCard")) {
@@ -24,6 +27,7 @@ public class Verification {
 		return 2;
 	}
 
+	// This method will check the flag status and print the message accordingly.
 	public int seatVerification(User user, int flag) {
 		switch (flag) {
 		case 0:
@@ -51,6 +55,7 @@ public class Verification {
 		return 1;
 	}
 
+	// This method will check the flag status and print the message accordingly.
 	public int verifyWronginput(User user) {
 
 		switch (paymentMode(user)) {

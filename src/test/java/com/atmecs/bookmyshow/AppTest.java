@@ -4,7 +4,7 @@ import static org.testng.Assert.assertEquals;
 
 import org.testng.annotations.Test;
 
-import com.atmecs.controller.ReadExcel1;
+import com.atmecs.controller.ReadExcel;
 import com.atmecs.pojo.User;
 import com.atmecs.util.FinalBilling;
 import com.atmecs.util.Revenue;
@@ -59,7 +59,7 @@ public class AppTest {
 		user.setChoice("Gold");
 		user.setSeatcount(2);
 		SeatOperation.seatStatus(user);
-		assertEquals(ReadExcel1.goldSeatsAvailable, 98);
+		assertEquals(ReadExcel.goldSeatsAvailable, 98);
 	}
 	
 	@Test

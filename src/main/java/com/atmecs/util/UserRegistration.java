@@ -41,14 +41,25 @@ public class UserRegistration {
 		System.out.println("Enter your Password:");
 		System.out.println(user.getPassword());
 
+		// Created the object for the entry available in the database to compare it with
+		// object get from the excel.
 		User userdb = db.getSpecificUser(user.getId());
-		if (userdb.getPassword().equals(user.getPassword()) && (userdb.getId() == user.getId())) {
-			System.out.println(user.getName() + " Successfully logged in...\n\n");
-			return 0;
-		} else {
-			System.out.println("Invalid Id or password...\n\n");
-			return 1;
+		try {
+			if (userdb.getPassword().equals(user.getPassword()) && (userdb.getId() == user.getId())
+					&& userdb.getName().equals(user.getName()) && userdb.getName().equals(user.getName())
+					&& userdb.getLname().equals(user.getLname())) {
+				System.out.println(user.getName() + " Successfully logged in...\n\n");
+				return 0;
+			} else if (userdb.getName() != user.getName() || userdb.getLname() != user.getLname()) {
+				System.out.println("Please enter a valid name\n\n");
+			} else {
+				System.out.println("Invalid Id or password...\n\n");
+
+			}
+		} catch (NullPointerException e) {
+			System.out.println("Invalid Id\n\n");
 		}
 
+		return 1;
 	}
 }
