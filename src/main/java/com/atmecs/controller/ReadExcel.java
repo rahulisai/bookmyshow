@@ -15,6 +15,7 @@ import org.apache.poi.xssf.usermodel.XSSFWorkbook;
 import com.atmecs.pojo.User;
 import com.atmecs.util.Revenue;
 import com.atmecs.util.UserRegistration;
+import com.atmecs.util.Verification;
 
 public class ReadExcel {
 	// Seat availability variables made static to get accessed by all the methods.
@@ -57,7 +58,13 @@ public class ReadExcel {
 					// by row.
 					ExcelOperation excelObject = new ExcelOperation();
 					user = excelObject.excelToObject(user, columnIndex, nextCell);
+
 				} // column ending
+
+				int errorflag = Verification.checkData(user);
+				if (errorflag == 1) {
+					continue;
+				}
 
 				// Get the choice from sheet to login or to signup.
 				UserRegistration registration = new UserRegistration();

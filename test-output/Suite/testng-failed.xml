@@ -5,7 +5,7 @@
     <classes>
       <class name="com.atmecs.bookmyshow.AppTest">
         <methods>
-          <include name="testverifyWronginput"/>
+          <include name="testuserLoginSignUpChoice"/>
         </methods>
       </class> <!-- com.atmecs.bookmyshow.AppTest -->
     </classes>

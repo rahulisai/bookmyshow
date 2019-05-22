@@ -6,14 +6,14 @@ import com.atmecs.pojo.User;
  * This class perform operations regarding seat. 
  */
 public class SeatOperation {
-	public static final String GOLD = "Gold";
-	public static final String SILVER = "Silver";
-	public static final String PLATINUM = "Platinum";
+	public static final String GOLD = "GOLD" ;
+	public static final String SILVER = "SILVER";
+	public static final String PLATINUM = "PLATINUM";
 	static final String LINE = "------------------------------------------------------";
 
 	//This method return seat rate based on user user choice.
-	public int getSeatChoice(User user) {
-		switch (user.getChoice()) {
+	public int getSeatRate(User user) {
+		switch (user.getChoice().toUpperCase()) {
 		case GOLD:
 			return 200;
 		case SILVER:
@@ -30,7 +30,7 @@ public class SeatOperation {
 	//It will check the availability of seat and return the number according.
 	public int seatAvailability(User user) {
 		int flag = 1;
-		switch (user.getChoice()) {
+		switch (user.getChoice().toUpperCase()) {
 		case GOLD:
 			if (ReadExcel.goldSeatsAvailable == 0) {
 				flag = 3;
@@ -70,7 +70,7 @@ public class SeatOperation {
 
 	//It will calculate the number of seats available
 	public static void seatStatus(User user) {
-		switch (user.getChoice()) {
+		switch (user.getChoice().toUpperCase()) {
 		case GOLD:
 			ReadExcel.goldSeatsAvailable = ReadExcel.goldSeatsAvailable - user.getSeatcount();
 			break;

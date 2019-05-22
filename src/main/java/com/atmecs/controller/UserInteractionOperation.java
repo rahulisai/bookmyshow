@@ -32,28 +32,28 @@ public class UserInteractionOperation {
 
 		if (value == 0) {
 			FinalBilling bill = new FinalBilling();
-			double amount = seat.getSeatChoice(user);
+			double amount = seat.getSeatRate(user);
 			user.setTicketcharge(bill.getTotalCharge(user, amount));
 
-			if (user.getTicketcharge() <= user.getBalance()) {
+			Verification account = new Verification();
+			int output = account.verifyWronginput(user);
+			if (output == 0) {
 
-				int convenienceCharges = 20;
-				Verification account = new Verification();
-				int output = account.verifyWronginput(user);
-				if (output == 0) {
+				if (user.getTicketcharge() <= user.getBalance()) {
+					int convenienceCharges = 20;
 					Revenue.getProfit(convenienceCharges);
 					SeatOperation.seatStatus(user);
 					System.out.println("Do you want to print ticket: 1.Yes 2. No");
 					System.out.println(user.getBillprint());
-					if (user.getBillprint().equals("Yes")) {
+					if (user.getBillprint().equalsIgnoreCase("Yes")) {
 						FinalBilling.printBill(user);
 					}
 					System.out.println("\n\n");
 					return user;
+				} else {
+					System.out.println("Insufficient Balance...\n\n");
 				}
-				System.out.println("\n\n");
-			} else {
-				System.out.println("Insufficient Balance...\n\n");
+
 			}
 		}
 		return null;

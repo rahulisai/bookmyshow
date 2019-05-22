@@ -74,15 +74,16 @@ public class ExcelOperation {
 				break;
 			case 10:
 				double bankAccount;
-				bankAccount = (double) getCellValue(nextCell);
+				bankAccount = (double) getCellValue(nextCell);		
 				user.setBankAccount((int) bankAccount);
+		
 				break;
 			default:
 				System.out.println("Invalid choice");
 				break;
 			}
 		} catch (ClassCastException e) {
-			System.out.println();
+			//System.out.println(e);
 		}
 		return user;
 

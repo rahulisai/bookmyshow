@@ -1,3 +1,4 @@
+
 package com.atmecs.pojo;
 
 public class User {

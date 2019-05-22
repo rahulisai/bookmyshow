@@ -46,7 +46,7 @@ public class Verification {
 			System.out.println("Please choose another seat option\n\n");
 			break;
 		case 4:
-			System.out.println("Seat cannot be zero");
+			System.out.println("Seat cannot be zero\n\n");
 			break;
 		default:
 			System.out.println("Invalid option");
@@ -62,15 +62,26 @@ public class Verification {
 		case 0:
 			return 0;
 		case 1:
-			System.out.println("Invalid Account Number or Name");
+			System.out.println("Invalid Account Number\n\n");
 			break;
 		case 2:
-			System.out.println("Please enter valid payment option");
+			System.out.println("Please enter valid payment option\n\n");
 			break;
 		default:
-			System.out.println("Invalid option");
+			System.out.println("Invalid option\n\n");
 			break;
 		}
 		return 1;
+	}
+	
+	public static int checkData(User user) {
+		if(user.getId()== 0 || user.getBankAccount()==0) {
+			System.out.println("Please enter valid information\n\n");
+			return 1;
+		}else if(user.getName()==null || user.getLname()==null  || user.getLoginChoice()==null || user.getBillprint()==null || user.getPassword()==null || user.getPaymentMode()==null){
+			System.out.println("Please enter valid\n\n");
+			return 1;
+		}
+		return 0;
 	}
 }

@@ -20,7 +20,7 @@ public class DbOperation {
 	// Method to get a specific user as per id.
 	public User getSpecificUser(int id) {
 		ResultSet rs = null;
-		String query = "select * from user where id=? ";
+		String query = "select * from user1 where id=? ";
 		con = connect.getConnection();
 		User user = new User();
 		try {
@@ -34,14 +34,12 @@ public class DbOperation {
 				user.setLname(rs.getString(3));
 				user.setPassword(rs.getString(4));
 				user.setBankAccount(rs.getInt(5));
-				
-				
 			}
 			pstmt.close();
 			rs.close();
 			con.close();
 		} catch (SQLException e) {
-			System.out.println(e);
+			System.out.println(e.getMessage()+"\n\n"); 
 		}
 		return user;
 	}
@@ -49,11 +47,11 @@ public class DbOperation {
 	// Method to insert the user in database
 	public int addUser(User user) {
 		con = connect.getConnection();
-		String query = "insert into user values(?,?,?,?,?)";
+		String query = "insert into user1 values(?,?,?,?,?)";
 
 		try {
 			pstmt = (PreparedStatement) con.prepareStatement(query);
-			pstmt.setDouble(1, user.getId());
+			pstmt.setInt(1, user.getId());
 			pstmt.setString(2, user.getName());
 			pstmt.setString(3, user.getLname());
 			pstmt.setString(4, user.getPassword());
@@ -63,7 +61,7 @@ public class DbOperation {
 			con.close();
 			return 0;
 		} catch (SQLException e) {
-			System.out.println("User account already exist\n\n");
+			System.out.println(e.getMessage()+"\n\n");
 			return 1;
 		}
 	}

@@ -39,7 +39,7 @@ public class AppTest {
 		User user = new User();
 		user.setChoice("Gold");
 		SeatOperation seat = new SeatOperation();
-		int amount = seat.getSeatChoice(user);
+		int amount = seat.getSeatRate(user);
 		assertEquals(amount, 200);
 	}
 
@@ -63,11 +63,14 @@ public class AppTest {
 	}
 	
 	@Test
-	public void testuserLoginSignUpChoice() {
+	public void testUserLoginSignUpChoice() {
 		User user = new User();
-		user.setName("abc");
-		user.setLoginChoice("Login");
 		user.setId(1);
+		user.setName("Ramesh");
+		user.setLname("Patel");
+		user.setPassword("abc123");
+		user.setLoginChoice("Login");
+		
 		user.setPassword("abc123");
 		UserRegistration register=new UserRegistration();
 		int choice=register.userLoginSignUpChoice(user);
@@ -75,7 +78,7 @@ public class AppTest {
 	}
 	
 	@Test
-	public void testPaymentbMode() {
+	public void testPaymentMode() {
 		User user = new User();
 		user.setId(1);
 		user.setName("Ramesh");
