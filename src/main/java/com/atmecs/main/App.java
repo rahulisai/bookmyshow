@@ -5,7 +5,7 @@ import com.atmecs.controller.ReadExcel;
 import com.atmecs.util.Revenue;
 
 /*
- * This a bookmyshow application for booking movie tickets.
+ * This is a bookmyshow application for booking movie tickets.
  * @author Rahul Isai
  * @version 1.0
  */
@@ -24,5 +24,6 @@ public class App {
 			System.out.println("File Not Found");
 		}
 		System.out.println("Total Revenue: " + Revenue.profit);
+		
 	}
 }

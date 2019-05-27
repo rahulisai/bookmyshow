@@ -73,14 +73,29 @@ public class Verification {
 		}
 		return 1;
 	}
-	
+
 	public static int checkData(User user) {
-		if(user.getId()== 0 || user.getBankAccount()==0) {
-			System.out.println("Please enter valid information\n\n");
-			return 1;
-		}else if(user.getName()==null || user.getLname()==null  || user.getLoginChoice()==null || user.getBillprint()==null || user.getPassword()==null || user.getPaymentMode()==null){
-			System.out.println("Please enter valid\n\n");
-			return 1;
+		switch (user.getLoginChoice().toUpperCase()) {
+		case "SIGNUP":
+			if (!user.getName().matches("[a-zA-Z]*") || !user.getLname().matches("[a-zA-Z]*")) {
+				System.out.print("Invalid input. Enter name: \n\n");
+				return 1;
+			}
+			if (user.getId() == 0.0 || user.getBankAccount() == 0.0 || user.getName() == null || user.getName() == null
+					|| user.getLname() == null || user.getLoginChoice() == null || user.getPassword() == null) {
+				System.out.println("Please enter valid information\n\n");
+				return 1;
+			}
+			break;
+			
+		case "LOGIN":
+			if (user.getId() == 0.0 || user.getBankAccount() == 0.0 || user.getName() == null || user.getName() == null
+					|| user.getLname() == null || user.getLoginChoice() == null || user.getBillprint() == null
+					|| user.getPassword() == null || user.getPaymentMode() == null || user.getSeatcount() == 0.0) {
+				System.out.println("Please enter valid information\n\n");
+				return 1;
+			}
+			break;
 		}
 		return 0;
 	}

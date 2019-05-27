@@ -79,7 +79,7 @@ public class ReadExcel {
 					if (user != null) {
 						empinfo.put(counter, new Object[] { user.getName(), user.getChoice(), user.getTicketcharge(),
 								user.getSeatcount(), "6:00" });
-						counter++;
+						counter++;    
 
 					}
 				}
